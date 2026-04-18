@@ -1,0 +1,10 @@
+name = "rehab-fim-app-dev"
+compatibility_date = "2024-07-01"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rehab-fim-db"
+database_id = "37454869-d518-4966-9a42-67422a63f81a"
+migrations_dir = "migrations"

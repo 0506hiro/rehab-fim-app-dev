@@ -1,0 +1,38 @@
+{
+  "name": "rehab-fim-app-dev",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "pages:build": "npx @cloudflare/next-on-pages@1",
+    "preview": "npm run pages:build && wrangler pages dev",
+    "deploy": "npm run pages:build && wrangler pages deploy",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate:local": "wrangler d1 migrations apply rehab-fim-db --local",
+    "db:migrate:prod": "wrangler d1 migrations apply rehab-fim-db"
+  },
+  "dependencies": {
+    "next": "14.2.15",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "drizzle-orm": "^0.30.10",
+    "recharts": "^2.12.7",
+    "date-fns": "^3.6.0"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.13.0",
+    "@cloudflare/workers-types": "^4.20240718.0",
+    "drizzle-kit": "^0.21.4",
+    "typescript": "^5.5.0",
+    "tailwindcss": "^3.4.4",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@types/node": "^20.14.10",
+    "wrangler": "^3.63.0",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.15"
+  }
+}
