@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getRequestContext } from '@cloudflare/next-on-pages'
+import { getContext } from '@cloudflare/next-on-pages'
 import { getCurrentUser } from '@/lib/auth'
 import { getDb, facilities } from '@/lib/db'
 import { eq } from 'drizzle-orm'
@@ -7,7 +7,7 @@ import { eq } from 'drizzle-orm'
 export const runtime = 'edge'
 
 export async function GET(request: NextRequest) {
-  const { env } = getRequestContext<CloudflareEnv>()
+  const { env } = getContext<CloudflareEnv>()
   const user = await getCurrentUser(request, env.DB)
 
   if (!user) {
